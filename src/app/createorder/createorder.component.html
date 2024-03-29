@@ -1,0 +1,58 @@
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Stock Name</th>
+      <th>Listing Price</th>
+      <th>Price per unit</th>
+      <th>Quantity</th>
+      <th>Type</th>
+      <th>Date and Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=>
+      <td>{{ order.stockname }}</td>
+      <td>{{ order.listingprice }}</td>
+      <td>{{ order.priceperunit }}</td>
+      <td>{{ order.quantity }}</td>
+      <td>{{ order.type }}</td>
+      <td>{{ order.datetime }}</td>
+      <td>{{ order.Status }}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Order List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Order Id</th>
+          <th>Stock Name</th>
+          <th>Listing Price</th>
+          <th>Price per unit</th>
+          <th>Quantity</th>
+          <th>Type</th>
+          <th>Date and Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderList">
+          <td>{{ order.orderid }}</td>
+          <td>{{ order.stockname }}</td>
+          <td>{{ order.listingprice }}</td>
+          <td>{{ order.priceperunit }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>{{ order.type }}</td>
+          <td>{{ order.datetime }}</td>
+          <td><span class="badge badge-pill badge-success">Created</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

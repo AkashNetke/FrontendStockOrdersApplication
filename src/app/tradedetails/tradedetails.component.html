@@ -1,0 +1,72 @@
+<body>
+  <form id="tradeForm" #tradeForm="ngForm">
+    {{ tradeForm.form.valid }}
+    <h1><b>Trade details</b></h1>
+    <br /><br />
+
+    <label for="stockName">Stock Name:</label>
+    <input
+      type="text"
+      id="stockName"
+      name="stockName"
+      [(ngModel)]="TradeDetails.stockname"
+      required
+    /><br />
+
+    <label for="listingPrice">Listing Price:</label>
+    <input
+      type="number"
+      id="listingPrice"
+      name="listingPrice"
+      step="0.01"
+      [(ngModel)]="TradeDetails.listingprice"
+      required
+    /><br />
+
+    <label for="pricePerUnit">Price per Unit:</label>
+    <input
+      type="number"
+      id="pricePerUnit"
+      name="pricePerUnit"
+      step="0.01"
+      [(ngModel)]="TradeDetails.priceperunit"
+      required
+    /><br />
+
+    <label for="quantity">Quantity:</label>
+    <input
+      type="number"
+      id="quantity"
+      name="quantity"
+      [(ngModel)]="TradeDetails.quantity"
+      required
+    /><br />
+
+    <label for="type">Type:</label>
+    <select id="type" name="type" [(ngModel)]="TradeDetails.type" required>
+      <option value="BUY">BUY</option>
+      <option value="SELL">SELL</option></select
+    ><br /><br />
+
+    <label for="datetime">Date and Time</label>
+    <input
+      type="datetime-local"
+      name="datetime"
+      [(ngModel)]="TradeDetails.datetime"
+      required
+    />
+    <br /><br />
+
+    <button
+      [disabled]="tradeForm.form.invalid"
+      type="submit"
+      (click)="submit()"
+    >
+      Submit
+    </button>
+    <div *ngIf="successMessage" class="alert alert-success" role="alert">
+      Trade Details saved successfully.
+      <a routerLink="/showall" class="alert-link">CLICK ME</a> to see details.
+    </div>
+  </form>
+</body>

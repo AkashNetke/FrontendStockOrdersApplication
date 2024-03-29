@@ -1,0 +1,54 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Trade Detail List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Stock Name</th>
+          <th>Listing Price</th>
+          <th>Price per unit</th>
+          <th>Quantity</th>
+          <th>Type</th>
+          <th>Date and Time</th>
+          <th>Action</th>
+          <th>Pending Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of tradeDetailsList">
+          <td>{{ t.stockname }}</td>
+          <td>{{ t.listingprice }}</td>
+          <td>{{ t.priceperunit }}</td>
+          <td>{{ t.quantity }}</td>
+          <td>{{ t.type }}</td>
+          <td>{{ t.datetime }}</td>
+
+          <td>
+            <button class="btn btn-danger" (click)="deleteTrade(t.id)">
+              Delete
+            </button>
+
+            <button
+              class="btn btn-info"
+              style="margin-left: 10px"
+              (click)="getTradeById(t.id)"
+            >
+              Edit
+            </button>
+          </td>
+          <td>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              (click)="getOneDetail(t.id)"
+            >
+              Confirm Order
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

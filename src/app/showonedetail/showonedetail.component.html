@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Trade details</h2>
+  <hr />
+  <div *ngIf="getOneDetail" class="trade-details-container">
+    <div>
+      <label><b>Trade Id: </b></label> {{ getOneDetail.id }}
+    </div>
+    <div>
+      <label><b>Stock Name: </b></label> {{ getOneDetail.stockname }}
+    </div>
+    <div>
+      <label><b>Listing Price: </b></label> {{ getOneDetail.listingprice }}
+    </div>
+    <div>
+      <label><b>Price Per Unit: </b></label> {{ getOneDetail.priceperunit }}
+    </div>
+    <div>
+      <label><b>Quantity: </b></label> {{ getOneDetail.quantity }}
+    </div>
+    <div>
+      <label><b>Trade Type: </b></label> {{ getOneDetail.type }}
+    </div>
+    <div>
+      <label><b>Date and Time: </b></label> {{ getOneDetail.datetime }}
+    </div>
+  </div>
+
+  <!-- <br />
+  <br />
+  <button class="btn btn-info" (click)="getTradeById(getOneDetail.id)">
+    Edit
+  </button> -->
+  <br />
+  <br />
+  <button class="btn btn-info" (click)="saveOrder()">Create Order</button><br />
+  <br />
+  <button (click)="list()" class="btn btn-primary">Back to Player List</button
+  ><br />
+</div>
